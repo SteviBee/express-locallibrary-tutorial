@@ -4,36 +4,109 @@ html(lang='en')
     title= title
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1')
-    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
-    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
-    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    link(href="https://fonts.googleapis.com/css?family=Asul" rel="stylesheet")
+    
+    //- working links/scripts:
+    //- link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    //- script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+    //- script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
     link(rel='stylesheet', href='/stylesheets/style.css')
+    
+    //- script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js", integrity="sha384-u/bQvRA/1bobcXlcEYpsEdFVK/vJs3+T+nXLsBYJthmdBuavHvAW6UsmqO2Gd/F9", crossorigin="anonymous")
+    //- script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js", integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T", crossorigin="anonymous")  
+    //- link(href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css", rel="stylesheet", integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB", crossorigin="anonymous")
+    //- npm run devstart
   body
+    div(class='top-header')
+      ul(class='social-icons-menu')
+        li(class='menu-item')
+          a(href='https://www.facebook.com/') Facebook
+        li(class='menu-item')
+          a(href='https://www.twitter.com/') Twitter
+        li(class='menu-item')
+          a(href='https://www.Pinterest.com/') Pinterest
+        li(class='menu-item')
+          a(href='https://www.Wordpress.com/') Wordpress
+        li(class='menu-item')
+          a(href='https://www.Youtube.com/') Youtube
+        li(class='menu-item')
+          a(href='https://www.instagram.com/') Instagram
+    
     div(class='container-fluid')
-      div(class='row')
-        div(class='col-sm-2')
-          block sidebar
-            ul(class='sidebar-nav')
-              li
-                a(href='/catalog') Home
-              li
-                a(href='/catalog/books') All books
-              li
-                a(href='/catalog/authors') All authors
-              li
-                a(href='/catalog/genres') All genres
-              li
-                a(href='/catalog/bookinstances') All book-instances
-              li
-                hr
-              li
-                a(href='/catalog/author/create') Create new author
-              li
-                a(href='/catalog/genre/create') Create new genre
-              li
-                a(href='/catalog/book/create') Create new book
-              li
-                a(href='/catalog/bookinstance/create') Create new book instance (copy)
+      div(class='make-border')
+        //- button(href="#menu") &#9776;    
+        div(class='address')
+          | 
+          span 3131 Fake St. </br>
+          span Denver, CO. 80213 </br>  
+          span 303-867-5309 </br>
+          |   
+        
+        div 
+          h1(id='total-main-logo')
+            //- img(src='/images/footerlogo.png' id='main-logo')
+            a(href='/catalog')
+              img(src='/images/mainlogo.png' id='mainlogo')
+            a(href='/catalog' id='site-logo') Denver Public Library
+            
+        div(id='menu-outer')
+          div(class='col-sm-2')
+            block sidebar
+              ul(class='sidebar-nav')
+                li
+                  a(href='/catalog') Home
+                li
+                  a(href='/catalog/books') All books
+                li
+                  a(href='/catalog/authors') All authors
+                li
+                  a(href='/catalog/genres') All genres
+                li
+                  a(href='/catalog/bookinstances') All book copies
+                //- li
+                //-   hr
+                li
+                  a(href='/catalog/author/create') Create new author
+                li
+                  a(href='/catalog/genre/create') Create new genre
+                li
+                  a(href='/catalog/book/create') Create new book
+                li
+                  a(href='/catalog/bookinstance/create') Create new book copy
 
-        div(class='col-sm-10')
-          block content
+            //- h1 Dynamic content
+            
+  div(class='dyno-content')
+    div(id='make-dyno-border')
+      block content
+  
+  footer
+    div(id='footer-container')
+      div(id='make-footer-border')
+        div(id='address' class='foot-item')
+          img(src='/images/footerlogo.png')      
+          span Denver Public Library </br>
+          span 3131 Fake St. </br>
+          span Denver, CO. 80213 </br>  
+          
+        div(id='contact' class='foot-item')
+          img(src='/images/phone.png')
+          span Main Desk 
+            span(class='right') 303.867-5309 
+            br
+          span Children's Desk 
+            span(class='right') 303.867-5310 
+            br
+          span Reference Desk 
+            span(class='right') 303.867-5311 
+          
+        div(id='hours' class='foot-item')
+          img(src='/images/clock.png')
+          span Mon - Thu 
+            span(class='right') 9 a.m. - 9 p.m
+            br
+          span Fri - Sat 
+            span(class='right') 9 a.m. - 4:30 p.m 
+            br
+          span Sun 
+            span(class='right') 9 a.m. - 1 p.m          
